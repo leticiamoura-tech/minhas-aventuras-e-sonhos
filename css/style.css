@@ -1,0 +1,488 @@
+:root {
+    --creme: #F7F0E5;
+    --areia: #D8B69A;
+    --terracota: #B96F55;
+    --marrom: #77604D;
+    --oliva: #879078;
+    --branco: #FFFCF7;
+    --texto: #493B32;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--creme);
+    color: var(--texto);
+    font-family: Georgia, serif;
+    line-height: 1.8;
+}
+
+header {
+    background-color: var(--creme);
+    text-align: center;
+    padding: 45px 20px 30px;
+    border-bottom: 1px solid var(--areia);
+}
+
+header h1 {
+    color: var(--terracota);
+    font-size: 38px;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+header p {
+    color: var(--marrom);
+    font-style: italic;
+    margin-top: 10px;
+}
+
+nav {
+    background-color: var(--creme);
+    text-align: center;
+    padding: 18px;
+    border-bottom: 1px solid var(--areia);
+}
+
+nav a {
+    display: inline-block;
+    color: var(--marrom);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--terracota);
+    transform: translateY(-2px);
+}
+
+main {
+    max-width: 1150px;
+    margin: auto;
+    padding: 45px 25px;
+}
+
+section {
+    background-color: var(--branco);
+    padding: 35px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(80, 60, 40, 0.06);
+}
+
+section h2 {
+    color: var(--terracota);
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+section h3 {
+    color: var(--marrom);
+    font-size: 22px;
+    margin: 25px 0 12px;
+}
+
+section p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.galeria-parnaiba,
+.galeria-familia,
+.galeria-animais,
+.aventura {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.galeria-parnaiba img,
+.galeria-familia img,
+.aventura img {
+    width: 230px;
+    height: 250px;
+    object-fit: cover;
+    padding: 9px;
+    padding-bottom: 28px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transform: rotate(-2deg);
+    transition: 0.3s;
+}
+
+.galeria-parnaiba img:nth-child(even),
+.galeria-familia img:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.galeria-parnaiba img:hover,
+.galeria-familia img:hover,
+.aventura img:hover {
+    transform: rotate(0deg) scale(1.04);
+}
+
+.galeria-animais figure {
+    background-color: white;
+    padding: 12px 12px 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transform: rotate(-2deg);
+}
+
+.galeria-animais figure:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+.galeria-animais img {
+    width: 210px;
+    height: 210px;
+    object-fit: cover;
+}
+
+.galeria-animais figcaption {
+    text-align: center;
+    color: var(--terracota);
+    margin-top: 10px;
+}
+
+video {
+    max-width: 100%;
+    width: 400px;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: var(--marrom);
+    color: var(--creme);
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav {
+        padding: 12px 5px;
+    }
+
+    nav a {
+        margin: 5px 8px;
+        font-size: 14px;
+    }
+
+    main {
+        padding: 25px 12px;
+    }
+
+    section {
+        padding: 22px 17px;
+    }
+
+    section h2 {
+        font-size: 23px;
+    }
+
+    .galeria-parnaiba img,
+    .galeria-familia img,
+    .aventura img {
+        width: 100%;
+        height: auto;
+        max-height: 350px;
+    }
+
+    .galeria-animais figure {
+        width: 100%;
+    }
+
+    .galeria-animais img {
+        width: 100%;
+        height: 260px;
+    }
+
+    video {
+        width: 100%;
+    }
+}
+
+.carrossel-sonhos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin: 40px auto;
+    max-width: 750px;
+}
+
+.slide {
+    display: none;
+    text-align: center;
+    animation: aparecer 0.5s ease;
+}
+
+.slide.ativo {
+    display: block;
+}
+
+.slide img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.slide h3 {
+    color: var(--terracota);
+    margin-top: 15px;
+}
+
+.seta {
+    background-color: var(--terracota);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.seta:hover {
+    background-color: var(--marrom);
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .carrossel-sonhos {
+        gap: 10px;
+    }
+
+    .slide img {
+        width: 230px;
+        height: 280px;
+    }
+
+    .seta {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+.inicio {
+    max-width: 1050px;
+    padding: 20px;
+}
+
+.capa-inicio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    min-height: 230px;
+    padding: 25px 40px;
+    background: linear-gradient(120deg, #F1E2D0, #E5C7AE);
+    border-radius: 15px;
+}
+
+.texto-inicio {
+    flex: 1;
+}
+
+.etiqueta {
+    color: var(--terracota);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.texto-inicio h2 {
+    color: var(--terracota);
+    font-size: 30px;
+    margin: 12px 0;
+}
+
+.texto-inicio p {
+    max-width: 440px;
+    font-size: 15px;
+    margin: 12px 0 20px;
+}
+
+.botao-inicio {
+    display: inline-block;
+    padding: 9px 18px;
+    background: var(--terracota);
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.botao-inicio:hover {
+    background: var(--marrom);
+    transform: translateY(-3px);
+}
+
+.planeta-container {
+    text-align: center;
+    width: 190px;
+    flex-shrink: 0;
+}
+
+#planeta {
+    background: transparent;
+    border: none;
+    font-size: 100px;
+    cursor: pointer;
+    animation: flutuar 3s ease-in-out infinite;
+    transition: transform 0.3s;
+}
+
+#planeta-icone {
+    display: inline-block;
+}
+
+#planeta:hover {
+    transform: scale(1.15);
+}
+
+#planeta.girando #planeta-icone {
+    animation: girarPlaneta 2s linear infinite;
+}
+
+#mensagem-planeta {
+    font-size: 12px;
+    color: var(--marrom);
+}
+
+@keyframes girarPlaneta {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.explorar-inicio {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.explorar-inicio h2 {
+    color: var(--terracota);
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.cartoes-inicio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.cartao-inicio {
+    background: var(--branco);
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--marrom);
+    transition: 0.3s;
+}
+
+.cartao-inicio:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.cartao-inicio img {
+    width: 100%;
+    height: 115px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.cartao-inicio h3 {
+    color: var(--terracota);
+    font-size: 16px;
+    margin-top: 7px;
+}
+
+@media (max-width: 600px) {
+    .capa-inicio {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 18px;
+        gap: 10px;
+    }
+
+    .texto-inicio h2 {
+        font-size: 25px;
+    }
+
+  .planeta-container {
+    text-align: center;
+    width: 190px;
+    flex-shrink: 0;
+}
+
+
+
+
+#planeta-icone {
+    display: inline-block;
+}
+
+
+#mensagem-planeta {
+    font-size: 12px;
+    color: var(--marrom);
+}
+
+    .cartoes-inicio {
+        gap: 10px;
+    }
+
+    .cartao-inicio {
+        padding: 6px;
+    }
+
+    .cartao-inicio img {
+        height: 90px;
+    }
+
+    .cartao-inicio h3 {
+        font-size: 12px;
+    }
+}
