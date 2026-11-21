@@ -46,6 +46,10 @@ nav {
     text-align: center;
     padding: 18px;
     border-bottom: 1px solid var(--areia);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav a {
